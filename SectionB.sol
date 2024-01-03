@@ -162,7 +162,7 @@ pragma solidity >=0.7.0 <0.9.0;
     The storage and code may still persist on the blockchain, but it becomes effectively unreachable.
 */
 
-contract Memory {
+contract SectionB {
 
     struct Point{
         uint256 x;

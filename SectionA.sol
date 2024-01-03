@@ -79,7 +79,7 @@ pragma solidity ^0.8.20;
 
 */
 
-contract YulTypes{
+contract SectionA{
 
 uint128 public C=4;
 uint96 public D=6;
