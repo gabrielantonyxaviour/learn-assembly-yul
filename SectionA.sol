@@ -5,7 +5,7 @@ pragma solidity ^0.8.20;
 
 // Section A Learnings
 // 1. slot, offset
-// 2. sload, store
+// 2. sload, sstore
 // 3. How to write a for loop in assembly and if statements
 /*
     for { let i:=0 } lt(i,10) { i:=add(i,1) }
@@ -15,8 +15,18 @@ pragma solidity ^0.8.20;
 */
 // 4. iszero, not, lt, gt
 // 5. all basic functions - add, sub, mul, div, mod, chl, chr, and, or, xor
-// 6. How to write in a slot and How to write in a specific offset in a slot
+// 6. How to read/write in a slot and How to read/write in a specific offset in a slot
 /*
+    function readD() external returns(uint16 d)
+    {
+        assembly{
+            let value := sload(D.slot)
+            let shifted := shr(mul(D.offset,8), value)
+
+            d := value
+        }
+    }
+            
     function writeToD(uint96 newVal) external {
 
         assembly{
